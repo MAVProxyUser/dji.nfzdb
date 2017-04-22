@@ -20,6 +20,9 @@ sqlite> .headers on
 sqlite> .once dji.nfzdb.csv
 sqlite> select * from dji_midware_data_forbid_FlyForbidElement;
 
+Another example for exporting queries in an automated fashion:
+echo -e ".mode csv\n.headers on\n.once kmlconvert.csv\nselect lat,lng,city,name from dji_midware_data_forbid_FlyForbidElement\n" | sqlite3 dji.nfzdb
+
 Encrypted - DJI GO 4--For drones since P4
 https://play.google.com/store/apps/details?id=dji.go.v4&hl=en
 
