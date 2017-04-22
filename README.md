@@ -1,6 +1,8 @@
 # dji.nfzdb
 DJI No Fly Zone SQLite DB as extracted from DJI Go app. 
 
+![Meet DJI's Brendan Schulman, also known as @dronelaws](https://raw.githubusercontent.com/MAVProxyUser/dji.nfzdb/master/brendan_dji_lord_of_war.png)
+
 Variants:
 .field private static final ENCRYPT_FLYFORBID_DB_NAME:Ljava/lang/String; = "dji.nfzdb.encrypt"
 .field private static final FLYFORBID_DB_NAME:Ljava/lang/String; = "dji.nfzdb"
@@ -42,6 +44,9 @@ WARNING, STRONG_WARNING, and CAN_NOT_UNLIMIT
 You can view data points in each level as follows
 select * from dji_midware_data_forbid_FlyForbidElement where level = 0;
 select * from dji_midware_data_forbid_FlyForbidElement where level = 2;
+
+The updated_at field is stored in Unix Time Stamp format... You can decode it at https://currentmillis.com
+As an example below 1488046048 is Saturday, 25-Feb-17 18:07:28 UTC or when "NFZ 1 of Iraq" was first added. 
 
 You should note that several War Zones have been added. 
 
