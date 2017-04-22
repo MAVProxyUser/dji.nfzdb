@@ -2,7 +2,7 @@
 DJI No Fly Zone SQLite DB as extracted from DJI Go app. 
 
 ![Meet DJI's Brendan Schulman, also known as @dronelaws](https://raw.githubusercontent.com/MAVProxyUser/dji.nfzdb/master/brendan_dji_lord_of_war.png)
-
+```
 Variants:
 .field private static final ENCRYPT_FLYFORBID_DB_NAME:Ljava/lang/String; = "dji.nfzdb.encrypt"
 .field private static final FLYFORBID_DB_NAME:Ljava/lang/String; = "dji.nfzdb"
@@ -78,5 +78,5 @@ $ sqlite3 dji.nfzdb "select * from dji_midware_data_forbid_FlyForbidElement wher
 7821|1488082557|0|0|0|0||43.930156||32831|65000|368|NFZ 4 of Iraq|0|1|35.645516|2
 7822|1488077753|0|0|0|0||45.733101||32832|30000|368|NFZ 5 of Iraq|0|1|35.510926|2
 7823|1488078478|0|0|0|0||43.82148||32833|65000|368|NFZ 6 of Iraq|0|1|32.903738|2
-
+```
 
