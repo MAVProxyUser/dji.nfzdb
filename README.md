@@ -46,6 +46,8 @@ https://www.zetetic.net/sqlcipher/sqlcipher-api/
 
 The password is currently "gH*=[xH2{Rm@Q" (as of 4/23/17), but could be easily changed. 
 It seems flysafe_areas_djigo.db.encrypt shares the same password as dji.nfzdb.encrypt
+You can similarly export data as follows: 
+echo -e ".mode csv\n.once flysafe_areas_djigo.db_kml.csv\nselect lat,lng,name,city from airmap_geofence_infos" | sqlite3 flysafe_areas_djigo.db.plaintext 
 
 OSX binaries for sqlcipher were pulled via brew: 
 https://www.zetetic.net/blog/2013/1/21/sqlcipher-available-on-homebrew.html
