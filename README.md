@@ -30,10 +30,8 @@ The included dji.nfzdb_kml.kml is an example of the current DB converted to KML.
 Encrypted - DJI GO 4--For drones since P4
 https://play.google.com/store/apps/details?id=dji.go.v4&hl=en
 
-This version is making use of SQLCipher, a technique will need to be created to extract / verify the encrypted DB vs the plaintext 
+This version is making use of SQLCipher, the password can be seen in plain text in the libFlyForbid.so binary
 https://www.zetetic.net/sqlcipher/sqlcipher-api/
-
-The password is currently unknown, but should be easy to extract. 
 
 .method public static generateEncryptDb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 ...
@@ -43,6 +41,26 @@ The password is currently unknown, but should be easy to extract.
 ...
     const-string/jumbo v1, "DETACH DATABASE encrypted"
 
+The password is currently "gH*=[xH2{Rm@Q" (as of 4/23/17), but could be easily changed. 
+
+OSX binaries for sqlcipher were pulled via brew: 
+https://www.zetetic.net/blog/2013/1/21/sqlcipher-available-on-homebrew.html
+
+$ sqlcipher dji.nfzdb.encrypt 
+SQLCipher version 3.15.2 2016-11-28 19:13:37
+Enter ".help" for instructions
+Enter SQL statements terminated with a ";"
+sqlite> PRAGMA key = "gH*=[xH2{Rm@Q";
+sqlite> ATTACH DATABASE 'plaintext.db' AS plaintext KEY '';
+sqlite> SELECT sqlcipher_export('plaintext'); 
+sqlite> DETACH DATABASE plaintext;
+sqlite> ^D
+$ sqlite3 plaintext.db 
+SQLite version 3.16.2 2017-01-06 16:32:41
+Enter ".help" for usage hints.
+sqlite> .tables
+dji_midware_data_forbid_model_FlyForbidElement      
+dji_midware_data_forbid_model_FlyForbidElementAirMap
 
 DJI No FLy Zones appear in several "levels":
 
