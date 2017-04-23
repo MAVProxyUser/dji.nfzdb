@@ -1,6 +1,9 @@
 # dji.nfzdb
 DJI No Fly Zone SQLite DB as extracted from DJI Go app. 
 
+Just here for the pop corn? Download the KML file here:
+[DJI_NFZ_KML](https://raw.githubusercontent.com/MAVProxyUser/dji.nfzdb/master/dji.nfzdb_kml.kml)
+
 ![Meet DJI's Brendan Schulman, also known as @dronelaws](https://raw.githubusercontent.com/MAVProxyUser/dji.nfzdb/master/brendan_dji_lord_of_war.png)
 ```
 Variants:
