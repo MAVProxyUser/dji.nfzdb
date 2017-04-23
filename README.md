@@ -45,6 +45,7 @@ https://www.zetetic.net/sqlcipher/sqlcipher-api/
     const-string/jumbo v1, "DETACH DATABASE encrypted"
 
 The password is currently "gH*=[xH2{Rm@Q" (as of 4/23/17), but could be easily changed. 
+It seems flysafe_areas_djigo.db.encrypt shares the same password as dji.nfzdb.encrypt
 
 OSX binaries for sqlcipher were pulled via brew: 
 https://www.zetetic.net/blog/2013/1/21/sqlcipher-available-on-homebrew.html
