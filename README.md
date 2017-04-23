@@ -21,7 +21,7 @@ sqlite> .once dji.nfzdb.csv
 sqlite> select * from dji_midware_data_forbid_FlyForbidElement;
 
 Another example for exporting queries in an automated fashion:
-echo -e ".mode csv\n.once dji.nfzdb_kml.csv\nselect lat,lng,name, (select radius || ' meter radius NFZ around ' || city) from dji_midware_data_forbid_FlyForbidElement" | sqlite3 dji.nfzdb
+echo -e ".mode csv\n.once dji.nfzdb_kml.csv\nselect lat,lng,name, (select radius || ' meter radius level ' || level ||  ' NFZ around ' || city) from dji_midware_data_forbid_FlyForbidElement" | sqlite3 dji.nfzdb
 
 The resulting .csv file can be converted using https://www.earthpoint.us/ExcelToKml.aspx
 Be sure to add a header row: "Latitude,Longitude,Name,Description"
