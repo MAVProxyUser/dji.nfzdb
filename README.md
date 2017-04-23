@@ -21,7 +21,11 @@ sqlite> .once dji.nfzdb.csv
 sqlite> select * from dji_midware_data_forbid_FlyForbidElement;
 
 Another example for exporting queries in an automated fashion:
-echo -e ".mode csv\n.headers on\n.once kmlconvert.csv\nselect lat,lng,city,name from dji_midware_data_forbid_FlyForbidElement\n" | sqlite3 dji.nfzdb
+echo -e ".mode csv\n.once dji.nfzdb_kml.csv\nselect lat,lng,name, (select radius || ' meter radius NFZ around ' || city) from dji_midware_data_forbid_FlyForbidElement" | sqlite3 dji.nfzdb
+
+The resulting .csv file can be converted using https://www.earthpoint.us/ExcelToKml.aspx
+Be sure to add a header row: "Latitude,Longitude,Name,Description"
+The included dji.nfzdb_kml.kml is an example of the current DB converted to KML. 
 
 Encrypted - DJI GO 4--For drones since P4
 https://play.google.com/store/apps/details?id=dji.go.v4&hl=en
